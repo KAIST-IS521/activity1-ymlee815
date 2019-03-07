@@ -10,8 +10,11 @@ def func(f, num):
     i = 0 # counter
 
     with open(f, 'r') as csvfile:
-        reader = csv.reader(csvfile, delimiter = ',', quotechar ='"', quoting = csv.QUOTE_ALL)
-    
+        try:
+            reader = csv.reader(csvfile, delimiter = ',', quotechar = '"', quoting = csv.QUOTE_ALL)
+        except:
+            sys.exit(1) # The given CSV is not well-formed.
+
         for line in reader:
             line = [wd.replace('\r', '') for wd in line]
             line = [wd.replace('\n', '') for wd in line]
