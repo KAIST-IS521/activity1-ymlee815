@@ -5,7 +5,7 @@ def func(f, num):
     num = int(num)
 
     if num == 0:
-        sys.exit(1)
+        sys.exit(1) # N = 0
 
     i = 0 # counter
 
@@ -21,7 +21,8 @@ def func(f, num):
                 if i == num:
                     print(wd)
                     sys.exit(0)
-        sys.exit(1)
+
+        sys.exit(1) # N is out of the valid range of the given CSV.
 
 
 if __name__ == '__main__':
